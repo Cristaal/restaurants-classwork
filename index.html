@@ -25,7 +25,7 @@
         <h2 ng-show="restaurants.length && filtered.length">Restaurant List</h2>
         <h2 ng-show="restaurants.length && !filtered.length">No Matches</h2>
         <ul>
-          <li ng-repeat="item in filtered = (restaurants | filter:query)">
+          <li ng-repeat="item in filtered = (restaurant | filter:query)">
             <span ng-click="editing = true" ng-hide="editing">
               {{item.name}} {{item.description}} {{item.location}}
             </span>
