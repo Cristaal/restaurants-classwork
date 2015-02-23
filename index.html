@@ -25,15 +25,16 @@
         <h2 ng-show="restaurants.length && filtered.length">Restaurant List</h2>
         <h2 ng-show="restaurants.length && !filtered.length">No Matches</h2>
         <ul>
-          <li ng-repeat="item in filtered = (restaurant | filter:query)">
+          <li ng-repeat="item in filtered = (restaurants | filter:query)">
             <span ng-click="editing = true" ng-hide="editing">
-              {{item.name}} {{item.description}} {{item.location}}
+              {{item.name}} {{item.description}} {{item.location}} {{item.price}}
             </span>
             <span class="form-group" ng-show="editing" ng-submit="editing = false">
               <form class="form-inline" role="form">
                 <input type="text" class="form-control input-sm" ng-model="item.name" placeholder="Name">
                 <input type="text" class="form-control input-sm" ng-model="item.description" placeholder="Description">
                 <input type="text" class="form-control input-sm" ng-model="item.location" placeholder="Location">
+                <input type="text" class="form-control input-sm" ng-model="item.price" placeholder="Price">
                 <button class="btn btn-default btn-sm" type="submit">Save</button>
               </form>
             </span>
@@ -55,6 +56,13 @@
         </br>
           <div class="form-group">
             <input type="text" ng-model="restaurant.restaurantLocation" class="form-control" placeholder="Location">
+          </div>
+        </br>
+        </br>
+          <div class="form-group">
+            <input type="radio" ng-model="restaurant.restaurantPrice" class="form-control" value="$">$
+            <input type="radio" ng-model="restaurant.restaurantPrice" class="form-control" value="$$">$$
+            <input type="radio" ng-model="restaurant.restaurantPrice" class="form-control" value="$$$">$$$
           </div>
         </br>
         </br>

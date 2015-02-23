@@ -4,12 +4,15 @@ goodRestaurant.controller('RestaurantsCtrl', function StudentsCtrl($scope) {
     var newRestaurant = {
                           name: $scope.restaurant.restaurantName,
                           description: $scope.restaurant.restaurantDescription,
-                          location: $scope.restaurant.restaurantLocation
+                          location: $scope.restaurant.restaurantLocation,
+                          price: $scope.restaurant.restaurantPrice
                         }
+
   $scope.restaurants.push( newRestaurant );
   $scope.restaurant.restaurantName = null;
   $scope.restaurant.restaurantDescription = null;
   $scope.restaurant.restaurantLocation = null;
+  $scope.restaurant.restaurantPrice = null;
   };
 
 });
